@@ -4,4 +4,9 @@ s = input()
 
 s = s.lower()
 
-print(s)
+
+cnt = []
+for i in range(len(s)):
+    cnt.append(s.count(s[i]))
+
+print(cnt)
