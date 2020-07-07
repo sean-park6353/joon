@@ -13,7 +13,11 @@ for i in range(2, 1000001):
             k = j
             arr[j] = 1
 
-
+cnt = 0
 for i in range(m, n+1):
     if arr[i] == 0:
         print(i)
+        cnt = cnt+1
+
+
+print(cnt)
