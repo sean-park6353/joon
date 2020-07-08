@@ -11,13 +11,15 @@ for i in range(n):
     for j in range(len(arr[i])):
         if arr[i].count(arr[i][j]) == 1:
             c = c+1
-            break
         else:
             g.append(arr[i])
+            break
 
+r = []
 for i in range(len(g)):
     for j in range(len(g[i])):
-        if g[i][j] == g[i][j+1]:  # 바로 옆에 붙어있는 경우
+        if g[i].count(g[i][j]) >= 2:
+            r.append(g[i][j])
+            break
 
-
-ff
+for i in ra
