@@ -18,3 +18,6 @@ for i in range(n):
 for i in range(len(g)):
     for j in range(len(g[i])):
         if g[i][j] == g[i][j+1]:  # 바로 옆에 붙어있는 경우
+
+
+ff
