@@ -1,23 +1,16 @@
-def dfs(graph, v, arr):
-    arr[v] = True
+n, m, v = map(int, input().split())
+result = [False]*n
+arr = []
+for i in range(m):
+    arr.append(list(map(int, input().split())))
+
+
+def dfs(arr, v, result):
     print(v, end=' ')
-    for i in graph[v]:
-        if not arr[i]:
-            dfs(graph, i, arr)
+    result[v-1] = True
+    for i in range(len(arr)):
+        if v in arr[i]:
+            result[v] = True
 
 
-graph = [
-    [],
-    [2, 3, 8],
-    [1, 7],
-    [1, 4, 5],
-    [3, 5],
-    [3, 4],
-    [7],
-    [2, 6, 8],
-    [1, 7]
-]
-
-arr = [False]*9
-
-dfs(graph, 1, arr)
+dfs(arr, v, result)

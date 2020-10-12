@@ -5,13 +5,23 @@ for i in range(n):
 
 
 def dsf(x, y):
-    print(2)
+    if x >= n or y >= n or x <= -1 or y <= -1:
+        return False
+    if graph[x][y] == 0:
+        graph[x][y] = 1
+        dsf(x+1, y)
+        dsf(x, y+1)
+        dsf(x, y-1)
+        dsf(x-1, y)
+        return True
+    return False
 
 
-result = 0
+cnt = 0
+
 for i in range(n):
     for j in range(m):
         if dsf(i, j) == True:
-            result += 1
+            cnt += 1
 
-print(result)
+print(cnt)

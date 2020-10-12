@@ -1,24 +1,12 @@
-def dfs(graph, v, visited):
-    visited[v] = True
+n, m, v = map(int, input().split())
+arr = []
+for i in range(m):
+    arr.append(list(map(int, input().split())))
+
+result = [False]*n
+def dfs(arr, v):
     print(v, end=' ')
-    for i in graph[v]:
-        if not visited[i]:
-            dfs(graph, i, visited)
-
-
-graph = [
-    [],
-    [2, 3, 8],
-    [1, 7],
-    [1, 4, 5],
-    [3, 5],
-    [3, 4],
-    [7],
-    [2, 6, 8],
-    [1, 7]
-]
-
-visited = [False]*9
-
-print(visited)
-dfs(graph, 1, visited)
+    for i in range(len(arr)):
+        if v in arr[i]:
+            tmp = arr[i]
+            break
