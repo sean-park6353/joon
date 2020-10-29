@@ -1,32 +1,43 @@
 n = int(input())
-graph = []
-for i in range(n):
-    graph.append(list(map(int, input())))
-
-print(graph)
-
-
-def dsf(x, y, p):
-    if x >= n or y >= n or x <= -1 or y <= -1:
-        return 0
-    if graph[x][y] == 1:
-        graph[x][y] = 0
-        p += 1
-        tmp1 = dsf(x+1, y, p)
-        tmp2 = dsf(x, y+1, tmp1)
-        tmp3 = dsf(x-1, y, tmp2)
-        tmp4 = dsf(x, y-1, tmp3)
-        return tmp4
-    return 0
-
-
+arr = []
+visited = []
 cnt = 0
-result = []
+dan = []
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+
+
+def dfs(i, j):
+    global cnt
+    cnt += 1
+    visited[i][j] = True
+    for k in range(4):
+        ni = i+dx[k]
+        nj = j+dy[k]
+        if ni < 0 or nj < 0 or nj >= n or ni >= n:
+            continue
+        if visited[ni][nj] == True:
+            continue
+        if arr[ni][nj] != 1:
+            continue
+        dfs(ni, nj)
+
+
+for i in range(n):
+    arr.append(list(map(int, input())))
+    visited.append([False]*n)
 for i in range(n):
     for j in range(n):
-        if dsf(i, j, 0) != 0:
-            cnt += 1
+        if arr[i][j] == 1 and visited[i][j] == False:
+            cnt = 0
+            dfs(i, j)
+            dan.append(cnt)
 
-print(cnt)
-
-
+dan.sort()
+print(len(dan))
+for i in dan:
+    print(i)
+# print(cnt)
+# print(dan)
+# print(arr)
+# print(visited)

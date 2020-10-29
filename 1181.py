@@ -10,8 +10,6 @@ for i in range(len(arr)):
         if len(arr[i]) == len(arr[j]):
             if arr[i] < arr[j]:
                 arr[i], arr[j] = arr[j], arr[i]
-
 arr.reverse()
-
 for i in arr:
     print(i)

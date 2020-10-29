@@ -34,7 +34,5 @@ for i in range(arr1[size-1]*(arr2[0]-1), int(n)):
     if i+sum(divide(str(i))) == int(n):
         print(i)
         break
-
-
 if cnt >= int(n):
     print(0)
