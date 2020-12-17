@@ -25,4 +25,4 @@ for i in range(m):
 
 
 dfs(1, n)
-print(cnt)
+print(arr)

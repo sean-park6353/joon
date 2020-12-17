@@ -8,3 +8,4 @@ for i in range(m):
 num = 9000000
 for i in arr:
     if min(i) < num:
+        print(num)

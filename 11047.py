@@ -20,3 +20,21 @@ while True:
         break
 
 print(m)
+
+
+n, k = map(int, input().split(' '))
+
+arr = []
+for i in range(n):
+    arr.append(int(input()))
+
+arr = arr[::-1]
+x = 0
+result = []
+for i in range(len(arr)):
+    cnt = int(k/arr[i])
+    if cnt != 0:
+        k = k-cnt*arr[i]
+        result.append(cnt)
+
+print(sum(result))

@@ -1,14 +1,18 @@
+from operator import itemgetter
 n = int(input())
-arr = []
-tmp = []
-for i in range(n):
-    arr.append(list(map(int, input().split())))
 
-print(arr)
-# for i in range(len(arr)):
-#     arr[i].sort(reverse=True)
-# print(arr)
-# arr.sort()
-# for i in range(len(arr)):
-#     arr[i].sort(reverse=False)
-# print(arr)
+arr = []
+for i in range(n):
+    arr.append(tuple(map(int, input().split(' '))))
+arr.sort(key=itemgetter(1, 0))
+
+
+flg = arr[0]
+result = [flg]
+for i in range(1, len(arr)):
+    if flg[1] <= arr[i][0]:
+        flg = arr[i]
+        result.append(arr[i])
+
+
+print(len(result))
