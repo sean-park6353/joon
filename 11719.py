@@ -1,3 +1,5 @@
-n = input().split('\n')
-
-print(n)
+while True:
+    try:
+        print(input())
+    except EOFError:
+        break
