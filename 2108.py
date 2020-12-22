@@ -19,12 +19,29 @@
 # stdout.write(str(max(arr)-min(arr)))
 
 import math
+
+
+def roundUp(num):
+    if num >= 0:
+        return int(num) + 1 if (num - int(num)) >= 0.5 else int(num)
+    else:
+        num = abs(num)
+        return -int(num) + 1 if (num - int(num)) >= 0.5 else int(num)
+
+
 n = int(input())
 arr = []
 for i in range(n):
     arr.append(int(input()))
 arr.sort()
-a = sum(arr)/n
-b = arr.index(arr[int(len(arr)/2)-1])
-print()
+a = roundUp(sum(arr)/n)
+b = arr.index(arr[len(arr)//2])
+big = 0
+for i in arr:
+    if arr.count(i) > big:
+        big = i
+c = big
+
+print(a)
 print(b)
+print(c)

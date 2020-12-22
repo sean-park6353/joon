@@ -1,2 +1,3 @@
-n = int(input())
-[].
+
+
+def push()
