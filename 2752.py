@@ -1,1 +1,2 @@
-print(list(map(int, input().split(' '))).sort())
+for i in sorted(list(map(int, input().split(' ')))):
+    print(i, end=' ')
