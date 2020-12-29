@@ -1,14 +1,5 @@
-# cnt = 0
-# a = int(input())
-# b = int(input())
-# g = [[]]
-# result = []
-# for i in range(1, b+1):
-#     tmp = list(map(int, input().split(' ')))
-#     g.append(tmp)
-
-
 def dfs(num):
+    global
     visit[num] = True
     print(num, end=' ')
     for i in graph[num]:
