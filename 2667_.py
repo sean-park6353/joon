@@ -31,7 +31,7 @@ for i in range(n):
             cnt = 0
             dfs(i, j)
             dan.append(cnt)
-da
+
 print(len(dan))
 for i in dan:
     print(i, end='\n')
