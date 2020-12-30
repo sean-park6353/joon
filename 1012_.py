@@ -29,6 +29,6 @@ for case in range(t):
     for i in range(b):
         for j in range(a):
             if arr[i][j] == 1 and visit[i][j] == False:
-                cnt += 1
                 dsf(i, j)
+                cnt += 1
     print(cnt)
