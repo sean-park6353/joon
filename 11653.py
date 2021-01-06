@@ -1,3 +1,3 @@
-a=int(input())
-while True:
-    if 
+a = int(input())
+
+while a%
