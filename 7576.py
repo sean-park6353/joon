@@ -10,14 +10,10 @@ for i in range(b):
 visit = copy.deepcopy(graph)
 
 q = deque([])
-
-minus_arr = []
 for i in range(b):
     for j in range(a):
         if graph[i][j] == 1:
             q.append((i, j))
-        elif graph[i][j] == -1:
-            minus_arr.append((i, j))
 
 while q:
     x, y = q.popleft()
@@ -38,6 +34,7 @@ flg = False
 for i in range(len(visit)):
     if 0 in visit[i]:
         flg = True
+        break
 
 result = []
 for i in range(len(visit)):
