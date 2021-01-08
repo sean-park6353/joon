@@ -1,6 +1,6 @@
 from collections import deque
 import copy
-cnt = 0
+
 xpos = [-1, 1, 0, 0]
 ypos = [0, 0, -1, 1]
 a, b = map(int, input().split(' '))
@@ -10,7 +10,6 @@ for i in range(b):
 visit = copy.deepcopy(graph)
 
 q = deque([])
-answer = 0
 
 minus_arr = []
 for i in range(b):
