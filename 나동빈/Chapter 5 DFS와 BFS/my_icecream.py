@@ -1,27 +1,32 @@
-n, m = map(int, input().split())
-graph = []
-for i in range(n):
-    graph.append(list(map(int, input())))
+graph = [
+
+    [0, 0, 0, 0],
+    [0, 0, 1, 1],
+    [1, 0, 0, 0],
+    [0, 1, 1, 1]
+
+]
+xpos = [-1, 1, 0, 0]
+ypos = [0, 0, -1, 1]
 
 
-def dsf(x, y):
-    if x >= n or y >= n or x <= -1 or y <= -1:
-        return False
-    if graph[x][y] == 0:
-        graph[x][y] = 1
-        dsf(x+1, y)
-        dsf(x, y+1)
-        dsf(x, y-1)
-        dsf(x-1, y)
-        return True
-    return False
+def dfs(x, y):
+    visit[x][y] = True
+    for i in range(4):
+        new_x = x+xpos[i]
+        new_y = y+ypos[i]
+        if new_x < 0 or new_y < 0 or new_x >= 4 or new_y >= 4:
+            continue
+        if visit[new_x][new_y] == True:
+            continue
+        if graph[new_x][new_y] != 1:
+            continue
+        dfs(new_x, new_y)
 
 
-cnt = 0
+visit = [[False]*4 for _ in range(4)]
 
-for i in range(n):
-    for j in range(m):
-        if dsf(i, j) == True:
-            cnt += 1
-
-print(cnt)
+for i in range(4):
+    for j in range(4):
+        if graph[i][j] == 1 and visit[i][j] == False:
+            dfs(i, j)
