@@ -1,4 +1,4 @@
-arr = ["park", "ji", "seonnng", 'k']
+import math
 
 
-print(sorted(arr, key=str.lower))
+print(math.comb(47, 3))
