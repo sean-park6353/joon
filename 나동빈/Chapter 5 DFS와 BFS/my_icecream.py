@@ -30,3 +30,8 @@ for i in range(4):
     for j in range(4):
         if graph[i][j] == 1 and visit[i][j] == False:
             dfs(i, j)
+
+list(map(int,input().strip('')))
+
+for i in graph:
+    print(i)
