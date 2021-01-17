@@ -6,19 +6,19 @@ for i in range(1, t+1):
     Bindex = []
     n = int(input())
     tmp = list(map(int, input().split(" ")))
-    for j in tmp:
-        if j == 0:
-            continue
-        if j % 2 == 0:
-            Bob.append(j)
-            Bindex.append(tmp.index(j))
+    for j in range(len(tmp)):
+        if tmp[j] % 2 == 0:
+            Bob.append(tmp[j])
+            Bindex.append(j)
         else:
-            Alex.append(j)
-            Aindex.append(tmp.index(j))
-    # print("Alex: ", Alex)
-    # print("Bob: ", Bob)
+            Alex.append(tmp[j])
+            Aindex.append(j)
+    # print(Aindex)
+    # print(Bindex)
     Alex = sorted(Alex)
     Bob = sorted(Bob, reverse=True)
+    # print("Alex: ", Alex)
+    # print("Bob: ", Bob)
     for j in range(len(Alex)):
         tmp[Aindex[j]] = Alex[j]
     for j in range(len(Bob)):
