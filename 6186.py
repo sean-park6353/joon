@@ -1,6 +1,4 @@
-import copy
 a, b = map(int, input().split(' '))
-
 xpos = [-1, 1, 0, 0]
 ypos = [0, 0, -1, 1]
 graph = []
