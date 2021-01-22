@@ -1,35 +1,23 @@
-s = input().lower()
+from collections import Counter
+a=input().lower()
+arr=list(map(str,a.strip('')))
+answer=Counter(arr)
 
-
-if len(s) == 1:
-    print(s[0].upper())
+big=0
+tmp=""
+for i,j in answer.items():
+    if big<j:
+        big=j
+        tmp=i
+cnt=0
+result=[]
+for i,j in answer.items():
+    if j==big:
+        cnt+=1
+    if cnt>=2:
+        result.append('?')
+        break
+if cnt>=2:
+    print(result[0])
 else:
-
-    cnt = []
-    r = []
-    b = []
-
-    for i in range(len(s)):
-        b.append(s.index(s[i]))
-
-    b = list(set(b))
-    b.sort()
-    print(b)
-
-    for i in range(len(b)):
-        cnt.append(s.count(s[b[i]]))
-        r.append(s.count(s[b[i]]))
-
-# print(cnt)
-
-    tmp = max(cnt)
-    cnt.remove(tmp)
-    tmp2 = max(cnt)
-
-    if tmp == tmp2:
-        print("?")
-    else:
-        for i in range(len(s)):
-            if max(r) == s.count(s[i]):
-                print(s[i].upper())
-                break
+    print(tmp.upper())
