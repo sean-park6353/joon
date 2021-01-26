@@ -1,1 +1,1 @@
-tuple().
+print(1)
