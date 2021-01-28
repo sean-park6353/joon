@@ -13,6 +13,4 @@ for i in range(0,8):
         for j in range(0,8,2):
             if graph[i][j]=="F":
                 cnt+=1
-
-
 print(cnt)
