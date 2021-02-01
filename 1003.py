@@ -36,7 +36,6 @@ for i in range(n):
     for j in range(2,a+1):
         dp[j][0]=dp[j-2][0]+dp[j-1][0]
         dp[j][1]=dp[j-2][1]+dp[j-1][1]
-
     print(dp[a][0],dp[a][1])
 
 
