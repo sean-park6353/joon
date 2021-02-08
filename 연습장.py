@@ -7,8 +7,6 @@ def BinarySearch(a, x):
     else: 
         return -1
 
-
-
 a=int(sys.stdin.readline())
 arr=list(map(int,sys.stdin.readline().split()))
 b=int(sys.stdin.readline())
@@ -22,6 +20,10 @@ for i in range(len(brr)):
     else:
         answer.append(1)
 print(*answer,sep='\n')
+
+
+# 주석 색깔
+
 
 
 
