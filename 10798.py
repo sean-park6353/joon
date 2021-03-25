@@ -1,17 +1,26 @@
-graph=[]
+arr=[]
+big=0
 for i in range(5):
-    graph.append(list(map(str,input().strip())))
-    # graph.append(list(map(str,input().strip())))
+    insert=list(map(str,input().strip(" ")))
+    if len(insert)>=big:
+        big=len(insert)
+        arr.append(insert)
+    else:
+        w=big-len(insert)
+        for j in range(w):
+            insert.append(" ")
+        arr.append(insert)
+for i in range(5):
+    if len(arr[i])!=big:
+        w=big-len(arr[i])
+        for j in range(w):
+            arr[i].append(" ")
 
 answer=[]
-
-for i in range(len(graph)):
-    for j in range(len(graph[i])):
-        if j>=i:
-            answer.append('')
-        else:
-            answer.append(graph[j][i])
-        
-
+for i in range(big):
+    for j in range(5):
+        if arr[j][i]!=" ":
+            answer.append(arr[j][i])
 for i in answer:
     print(i,end='')
+
