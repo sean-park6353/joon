@@ -1,0 +1,6 @@
+a, b = map(int, input().split(' '))
+arr = list(map(int, input().split(' ')))
+brr = list(map(int, input().split(' ')))
+arr.extend(brr)
+crr = sorted(arr)
+print(*crr, sep=' ')
